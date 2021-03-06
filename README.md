@@ -1,7 +1,9 @@
 Sinasco
 =======
 
+<p align="center">
 <img alt="Sinasco" src="https://github.com/Udaara/sinasco/blob/main/assets/images/sinasco.png" width="200px">
+</p>
 
 Sinasco is a standardization framework for Infrastructure as Code. Designed with cloud computing principals in mind, it allows users to cross validate their IaC scripts against Sinasco managed or user defined policies and configuration rules to enable a well managed and secure cloud infrastructure, without compromising the benefits an organization can harness in a cloud centric infrastructure ecosystem.
 
