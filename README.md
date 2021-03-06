@@ -32,7 +32,7 @@ Detect drift on an entire stack or on a particular resource by comparing the cur
 Measure the health of the Terraform script depending on the environment and create a quality report for the build. Further, weight and measure compliance & policy violations on severity, environment and the impact to generate the quality score. The quality score can be used to determine whether the code passes the custom quality gates built for the project, thus reject or create the infrastructure on a fully-automated manner.
 
 <br>
-
+:man: `:man:`
 
 ----------
 
