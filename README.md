@@ -28,6 +28,11 @@ Sinasco policies are written in simple YAML configuration files that enable user
 Detect drift on an entire stack or on a particular resource by comparing the current stack configuration to the one specified in the template that was used to create or update the stack.
 <br>
 
+#### <i class="icon-lock "></i> Measure Health & Custom Quality Gates
+Measure the health of the Terraform script depending on the environment and create a quality report for the build. Further, weight and measure compliance & policy violations on severity, environment and the impact to generate the quality score. The quality score can be used to determine whether the code passes the custom quality gates built for the project, thus reject or create the infrastructure on a fully-automated manner.
+
+<br>
+
 
 ----------
 
