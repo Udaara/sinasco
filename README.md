@@ -8,7 +8,7 @@ Sinasco
 Sinasco is a standardization framework for Infrastructure as Code. Designed with cloud computing principals in mind, it allows users to cross validate their IaC scripts against Sinasco managed or user defined policies and configuration rules to enable a well managed and secure cloud infrastructure, without compromising the benefits an organization can harness in a cloud centric infrastructure ecosystem.
 
 
-Sinasco can be used to manage [Terraform][1], a popular Infrastructure as Code tool., scripts for infrastructure provisioning on [AWS][2], [Azure][3], and [GCP][4].
+Sinasco can be used to manage [Terraform][1], a popular Infrastructure as Code tool, scripts for infrastructure provisioning on [AWS][2], [Azure][3], and [GCP][4].
 <br>
 <br>
 
