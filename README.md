@@ -24,11 +24,11 @@ Validate whether the approved Terraform modules are used in the code. Modules wh
 Sinasco can be used to force organizational modules for the scripts.
 <br>
 
-#### :page_facing_up: Organizational policy validation
+#### :page_facing_up: Organizational Policy Validation
 Sinasco policies are written in simple YAML configuration files that enable users to specify policies on a resource type, purpose and environment. These policy files are CSP independent and can be used on Terraform script written for any CSP.
 <br>
 
-#### :lock: Infrastructure drift validations
+#### :lock: Infrastructure Drift Validations
 Detect drift on an entire stack or on a particular resource by comparing the current stack configuration to the one specified in the template that was used to create or update the stack.
 <br>
 
