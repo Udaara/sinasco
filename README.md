@@ -21,6 +21,7 @@ Sinasco requires the following tools to function:
 - [Terraform][7]
 
 Installation can be verified as below
+    
     opa version
       Version: 0.28.0
       Build Commit: 3fbcd71
