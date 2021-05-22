@@ -44,6 +44,7 @@ Once the steps on the <b>Install Requirements</b> are done, we can proceed to ev
 | -i         | Directory with Terraform Code             | RP-Code/nonprod/                                                                 | 
 | -f         | Evaluation output format                  | <b>score</b> - Quality Gate Evaluation or <b>violation</b> - Violated policies   | 
 <br>
+
 Sinasco can be used to show the violated rule through `violation` flag
 
     sinasco.sh -d lib/aws/security/datastore.go -i RP-Code/nonprod/ -f violation
