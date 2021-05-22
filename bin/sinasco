@@ -39,4 +39,9 @@ elif [ "$6" != "score" ] && [ "$6" != "violation" ] && [ "$6" != "quality_gate_p
 # Inputs validated. Start evaluation
 else
     opa eval -f pretty --data $2 --input $4/tfplan.json "$6 = data.$(grep -o "sinasco.*" $2).$6"
+    
+    trigger=$(opa eval -f pretty --data $2 --input $4/tfplan.json "data.$(grep -o "sinasco.*" $2).quality_gate_passed")
+    if [  $trigger == false ]; then
+        exit 0
+    fi
 fi
