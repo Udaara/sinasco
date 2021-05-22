@@ -12,6 +12,32 @@ Sinasco can be used to manage [Terraform][1], a popular Infrastructure as Code t
 <br>
 <br>
 
+
+The key features of Sinasco
+---------------------------------------
+#### :link: Terraform Module Validations
+Validate whether the approved Terraform modules are used in the code. Modules which available over the internet could compromised the infrastructure built by violating the organizational standards.
+Sinasco can be used to force organizational modules for the scripts.
+<br>
+
+#### :link: Terraform Syntax Validations
+Validate whether the valid Terraform syntaxes are used in the code. As the validations conducts before initializing and building the code, it provides faster validation.
+<br>
+
+#### :page_facing_up: Organizational Policy Validation
+Managed Sinasco rules can be utilized for standard infrastructure evaluations. However, users are encouraged to write their own rules, catered for the organizational standrads and policies.
+<br>
+
+#### :chart_with_upwards_trend: Measure Health & Custom Quality Gates
+Measure the health of the Terraform script depending on the environment and create a quality report for the build. Further, weight and measure compliance & policy violations on severity, environment and the impact to generate the quality score. The quality score can be used to determine whether the code passes the custom quality gates built for the project, thus reject or create the infrastructure on a fully-automated manner.
+<br>
+
+#### :cloud: Multi-Cloud Supportability
+With industry moving towards multi-cloud, it is vital to be CSP-independent and move cloud services between different environments with standardized service definitions.
+Sinasco can be used to verify multi-cloud supportability of your code, by providing cross-validation on the policy docements against Terraform scripts written for any major cloud services provider.
+<br>
+
+
 Getting Started with Sinasco
 -----------------------------
 #### Install Requirements
@@ -75,32 +101,9 @@ Sinasco can be used to measure whether given resource stack passed the custom qu
       +---------------------+
 
 <br>
-The key features of Sinasco
----------------------------------------
-#### :cloud: Multi-Cloud Supportability
-With industry moving towards multi-cloud, it is vital to be CSP-independent and move cloud services between different environments with standardized service definitions.
-Sinasco can be used to verify multi-cloud supportability of your code, by providing cross-validation on the policy docements against Terraform scripts written for any major cloud services provider.
-<br>
 
-#### :link: Terraform Module Validations
-Validate whether the approved Terraform modules are used in the code. Modules which available over the internet could compromised the infrastructure built by violating the organizational standards.
-Sinasco can be used to force organizational modules for the scripts.
-<br>
+#### Structure of the Sinasco Rule File
 
-#### :page_facing_up: Organizational Policy Validation
-Sinasco policies are written in simple YAML configuration files that enable users to specify policies on a resource type, purpose and environment. These policy files are CSP independent and can be used on Terraform script written for any CSP.
-<br>
-
-#### :lock: Infrastructure Drift Validations
-Detect drift on an entire stack or on a particular resource by comparing the current stack configuration to the one specified in the template that was used to create or update the stack.
-<br>
-
-#### :chart_with_upwards_trend: Measure Health & Custom Quality Gates
-Measure the health of the Terraform script depending on the environment and create a quality report for the build. Further, weight and measure compliance & policy violations on severity, environment and the impact to generate the quality score. The quality score can be used to determine whether the code passes the custom quality gates built for the project, thus reject or create the infrastructure on a fully-automated manner.
-
-<br>
-
-----------
 
 
 License
