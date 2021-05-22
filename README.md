@@ -20,7 +20,7 @@ Validate whether the approved Terraform modules are used in the code. Modules wh
 Sinasco can be used to force organizational modules for the scripts.
 <br>
 
-#### :link: Terraform Syntax Validations
+#### :lock: Terraform Syntax Validations
 Validate whether the valid Terraform syntaxes are used in the code. As the validations conducts before initializing and building the code, it provides faster validation.
 <br>
 
