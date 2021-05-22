@@ -102,7 +102,8 @@ Sinasco can be used to measure whether given resource stack passed the custom qu
 
 <br>
 
-#### Structure of the Sinasco Rule File
+Structure of the Sinasco Rule File
+-----------------------------------
 
 Setting the Quality Gateway. score is calculated through the summation of the violated rules multiplied by the weight assigned for the rule.
 
