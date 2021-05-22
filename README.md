@@ -5,12 +5,46 @@ Sinasco
 <img alt="Sinasco" src="https://github.com/Udaara/sinasco/blob/main/assets/images/sinasco.png" width="200px">
 </p>
 
-Sinasco is a standardization framework for Infrastructure as Code. Designed with cloud computing principals in mind, it allows users to cross validate their IaC scripts against Sinasco managed or user defined policies and configuration rules to enable a well managed and secure cloud infrastructure, without compromising the benefits an organization can harness in a cloud centric infrastructure ecosystem.
+Sinasco is a standardization framework for Infrastructure as Code. Designed with cloud computing principals in mind, it allows users to cross validate their IaC scripts against organizational and security policies and configuration rules to enable a well managed and secure cloud infrastructure, without compromising the benefits an organization can harness in a cloud centric infrastructure ecosystem. Sinasco includes a library of rules written in Golang alogn with a wrapper written for Open Policy Agent (OPA) binaries.
 
 
 Sinasco can be used to manage [Terraform][1], a popular Infrastructure as Code tool, scripts for infrastructure provisioning on [AWS][2], [Azure][3], and [GCP][4].
 <br>
 <br>
+
+Getting Started with Sinasco
+-----------------------------
+#### Install Requirements
+
+Sinasco requires the following tools to function:
+- [OPA][6]
+- [Terraform][7]
+
+Installation can be verified as below
+    opa version
+      Version: 0.28.0
+      Build Commit: 3fbcd71
+      Build Timestamp: 2021-04-27T13:51:21Z
+      Build Hostname: c8a0b3ab05bf
+      Go Version: go1.15.8
+
+    terraform -v
+      Terraform v0.14.4
+
+Once OPA and Terraform are set, navigate to the Sinasco [releases][8] and download the latest binary (sinasco.zip)
+<b>bin</b> directory contains the sinasco wrapper, which is used to run the framework. <b>lib</b> directory contains Sinasco managed policies for unit tests, organizational compliance and security, for major cloud providers which can be used to evaluate and standardize the terraform code. Additional policies can be added to here
+
+#### Evaluating your IaC Code
+
+Once the steps on the <b>Install Requirements</b> are done, we can proceed to evaluate the Terraform code. Sinasco requires 3 user inputs to evalaute the code
+| Input Flag | Description                               | Sample Input                                                                     |
+|------------|-------------------------------------------|----------------------------------------------------------------------------------|
+| -d         | Sinasco rule file to evalaute the code    | lib/aws/security/datastore.go                                                    | 
+| -i         | Directory with Terraform Code             | RP-Code/nonprod/                                                                 | 
+| -f         | Evaluation output format                  | <b>score</b> - Quality Gate Evaluation or <b>violation</b> - Violated policies   | 
+
+
+
 
 The key features of Sinasco
 ---------------------------------------
@@ -50,3 +84,6 @@ Sinasco is licensed under the [Mozilla Public License v2.0][5]
   [3]: https://azure.microsoft.com/en-us/
   [4]: https://cloud.google.com/
   [5]: https://github.com/Udaara/sinasco/blob/main/LICENSE
+  [6]: https://www.openpolicyagent.org/docs/latest/#1-download-opa
+  [7]: https://www.terraform.io/downloads.html
+  [8]: https://github.com/Udaara/sinasco/releases
