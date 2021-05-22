@@ -36,7 +36,7 @@ Measure the health of the Terraform script depending on the environment and crea
 With industry moving towards multi-cloud, it is vital to be CSP-independent and move cloud services between different environments with standardized service definitions.
 Sinasco can be used to verify multi-cloud supportability of your code, by providing cross-validation on the policy docements against Terraform scripts written for any major cloud services provider.
 <br>
-
+<br>
 
 Getting Started with Sinasco
 -----------------------------
