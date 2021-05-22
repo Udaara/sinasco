@@ -1,9 +1,42 @@
 #!/usr/bin/env bash
 # Copyright 2021, Sinasco Project
 #
-# Licensed under the Mozilla Public License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
+# Licensed under the Mozilla Public License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-#
 #     https://www.mozilla.org/en-US/MPL/2.0/
+#
 
+# Basic command line argument handling.
+if [[ $# -lt 1 || "$1" == "-h" ]]; then
+  1>&2 echo "+-------------------------------------------------------------------------------+"
+  1>&2 echo "| Sinasco is a framework developed for Terraform Standardization                |"
+  1>&2 echo "|                                                                               |"
+  1>&2 echo "| usage: sinasco [-d standardization_rule] [-i terraform_plan] [-f output_type] |"
+  1>&2 echo "| example: sinasco -d lib/aws/security/ami.go -i tfplan.json -f violation       |"
+  1>&2 echo "+-------------------------------------------------------------------------------+"
+  exit 1
+fi
+
+# Check the Sinasco rules provided as input
+if [ "$1" != "-d" ]; then
+    echo "Sinasco rule flag missing. Please refer sinasco -h for help"
+elif [ "$2" == "" ]; then
+    echo "Sinasco rule not provided. Please refer sinasco -h for help"
+
+# Check the Terraform output provided as input
+elif [ "$3" != "-i" ]; then
+    echo "Terraform output flag missing. Please refer sinasco -h for help"
+elif [ "$4" == "" ]; then
+    echo "Terraform output not provided. Please refer sinasco -h for help"
+
+# Check the Output type provided as input
+elif [ "$5" != "-f" ]; then
+    echo "Sinasco output flag missing. Please refer sinasco -h for help"
+elif [ "$6" != "score" ] && [ "$6" != "violation" ]; then
+    echo "Invalid output format provided. Please refer sinasco -h for help"
+
+# Inputs validated. Start evaluation
+else
+    opa eval -f pretty --data $2 --input $4 "$6 = data.$(grep -o "sinasco.*" $2).$6"
+fi
