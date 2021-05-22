@@ -1,4 +1,4 @@
-package research.aws.security.datastore
+package sinasco.aws.security.datastore
 import input as tfplan
 
 #// Total score for the validation

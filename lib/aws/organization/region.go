@@ -1,4 +1,4 @@
-package research.aws.standards.region
+package sinasco.aws.organization.region
 import input as tfplan
 
 #// Total score for the validation

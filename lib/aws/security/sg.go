@@ -1,4 +1,4 @@
-package research.aws.security.sg
+package sinasco.aws.security.sg
 import input as tfplan
 
 #// Total score for the validation

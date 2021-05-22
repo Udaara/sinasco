@@ -1,4 +1,4 @@
-package research.aws.unit.module
+package sinasco.aws.code.module
 import input as tfplan
 
 #// Total score for the validation

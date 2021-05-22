@@ -1,4 +1,4 @@
-package research.aws.standards.tags
+package sinasco.aws.organization.tags
 import input as tfplan
 
 #// Total score for the validation

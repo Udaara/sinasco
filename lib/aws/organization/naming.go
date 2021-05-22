@@ -1,4 +1,4 @@
-package research.aws.standards.naming
+package sinasco.aws.organization.naming
 import input as tfplan
 
 #// Total score for the validation
