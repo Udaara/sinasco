@@ -43,10 +43,37 @@ Once the steps on the <b>Install Requirements</b> are done, we can proceed to ev
 | -d         | Sinasco rule file to evalaute the code    | lib/aws/security/datastore.go                                                    | 
 | -i         | Directory with Terraform Code             | RP-Code/nonprod/                                                                 | 
 | -f         | Evaluation output format                  | <b>score</b> - Quality Gate Evaluation or <b>violation</b> - Violated policies   | 
+<br>
+Sinasco can be used to show the violated rule through `violation` flag
 
+    sinasco.sh -d lib/aws/security/datastore.go -i RP-Code/nonprod/ -f violation
+      +--------------------------------+
+      |           violations           |
+      +--------------------------------+
+      | ["One or more S3 Buckets are   |
+      | public. Please change the ACL  |
+      | to Private"]                   |
+      +--------------------------------+
 
+Sinasco can be used to show the cumulative marks assigned to violates rules through `score` flag
 
+    sinasco.sh -d lib/aws/security/datastore.go -i RP-Code/nonprod/ -f score
+      +------------+
+      | score      |
+      +------------+
+      | 10         |
+      +------------+
 
+Sinasco can be used to measure whether given resource stack passed the custom quality  gate through `quality_gate_passed` flag
+
+    sinasco.sh -d lib/aws/security/datastore.go -i RP-Code/nonprod/ -f quality_gate_passed
+      +---------------------+
+      | Quality Gate Passed |
+      +---------------------+
+      | false               |
+      +---------------------+
+
+<br>
 The key features of Sinasco
 ---------------------------------------
 #### :cloud: Multi-Cloud Supportability
