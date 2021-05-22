@@ -64,11 +64,11 @@ Once OPA and Terraform are set, navigate to the Sinasco [releases][8] and downlo
 #### Evaluating your IaC Code
 
 Once the steps on the <b>Install Requirements</b> are done, we can proceed to evaluate the Terraform code. Sinasco requires 3 user inputs to evalaute the code
-| Input Flag | Description                               | Sample Input                                                                     |
-|------------|-------------------------------------------|----------------------------------------------------------------------------------|
-| -d         | Sinasco rule file to evalaute the code    | lib/aws/security/datastore.go                                                    | 
-| -i         | Directory with Terraform Code             | RP-Code/nonprod/                                                                 | 
-| -f         | Evaluation output format                  | <b>score</b> - Quality Gate Evaluation or <b>violation</b> - Violated policies   | 
+| Input Flag | Description                               | Sample Input                                                                                                                                  |
+|------------|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| -d         | Sinasco rule file to evalaute the code    | lib/aws/security/datastore.go                                                                                                                 | 
+| -i         | Directory with Terraform Code             | RP-Code/nonprod/                                                                                                                              | 
+| -f         | Evaluation output format                  | <b>score</b> - Quality Gate Evaluation or <b>violation</b> - Violated policies or <b>quality_gate_passed</b> - Final Evaluation of the Code   | 
 <br>
 
 Sinasco can be used to show the violated rule through `violation` flag
