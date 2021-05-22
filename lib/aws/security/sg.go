@@ -49,6 +49,6 @@ validate_sg_ingress[resource_type] = num {
     some resource_type
     resource_types[resource_type]
     all := resources[resource_type]
-    creates := [res | res:= all[_]; res.change.after.type == "ingress"; res.change.after.cidr_blocks[_] == "10.0.0.0/8"];
+    creates := [res | res:= all[_]; res.change.after.type == "ingress"; res.change.after.cidr_blocks[_] == "0.0.0.0/0"];
     num := count(creates)
 }
