@@ -151,6 +151,7 @@ ec2_naming_validation[resource_type] = num {
     num := count(creates)
 }
 ```
+<br>
 
 License
 -------------
