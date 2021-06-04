@@ -156,7 +156,7 @@ ec2_naming_validation[resource_type] = num {
 License
 -------------
 
-Sinasco is licensed under the [Mozilla Public License v2.0][5]
+Sinasco is licensed under the [MIT License][5]
 
   [1]: https://www.terraform.io/
   [2]: https://aws.amazon.com/
