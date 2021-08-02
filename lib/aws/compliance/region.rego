@@ -1,25 +1,25 @@
 package sinasco.aws.organization.region
 import input as tfplan
 
-// Total score for the validation
+# Total score for the validation
 quality_gate = 5
 
-// Marks assigned for validations
+# Marks assigned for validations
 quality_values = {
     "aws_instance": {"region":10},
     "aws_security_group": {"region":10}
 }
 
-// Cloud resources measured in the validation
+# Cloud resources measured in the validation
 resource_types = {"aws_instance","aws_security_group"}
 
-#// Quality Gate Evaluation
+# Quality Gate Evaluation
 default quality_gate_passed = false
 quality_gate_passed {
     score < quality_gate
 }
 
-// Compute the score for the terraform gold module usage
+# Compute the score for the terraform gold module usage
 score = eval {
     all := [ res |
             some resource_type
@@ -31,7 +31,7 @@ score = eval {
     eval := sum(all)
 }
 
-// List all resources json objects
+# List all resources json objects
 resources[resource_type] = all {
     some resource_type
     resource_types[resource_type]
@@ -41,7 +41,7 @@ resources[resource_type] = all {
     ]
 }
 
-// Error message to display on a violation
+# Error message to display on a violation
 violation["EC2 are provisioned in unsupported region(s). Please use a VPC in us-east-1 (North Virginia)"] {
     ec2_region_validation[resource_types[_]] > 0
 }
@@ -50,7 +50,7 @@ violation["Security Groups are provisioned in unsupported region(s). Please use 
     sg_region_validation[resource_types[_]] > 0
 }
 
-// Enforce region to us-east-1
+# Enforce region to us-east-1
 ec2_region_validation[resource_type] = num {
     some resource_type
     resource_types[resource_type]
