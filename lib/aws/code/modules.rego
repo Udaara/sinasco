@@ -1,24 +1,24 @@
 package sinasco.aws.code.module
 import input as tfplan
 
-#// Total score for the validation
+# Total score for the validation
 quality_gate = 5
 
-#// Marks assigned for validations
+# Marks assigned for validations
 quality_values = {
     "module_source": {"gold_modules":10}
 }
 
-#// Cloud resources measured in the validation
+# Cloud resources measured in the validation
 resource_types = {"module_source"}
 
-#// Quality Gate Evaluation
+# Quality Gate Evaluation
 default quality_gate_passed = false
 quality_gate_passed {
     score < quality_gate
 }
 
-#// Compute the score for the terraform gold module usage
+# Compute the score for the terraform gold module usage
 score = eval {
     all := [ res |
             some resource_type
@@ -29,7 +29,7 @@ score = eval {
     eval := sum(all)
 }
 
-#// List all module source json objects
+# List all module source json objects
 modules[resource_type] = all {
     some resource_type
     resource_types[resource_type]
@@ -38,12 +38,12 @@ modules[resource_type] = all {
     ]
 }
 
-#// Error message to display on a violation
+# Error message to display on a violation
 violation["Unauthorized Terraform module(s) detected. Please use the Gold modules"] {
    validate_modules[resource_types[_]] > 0
 }
 
-#// Validating the modules
+# Validating the modules
 validate_modules[resource_type] = num {
     some resource_type
     resource_types[resource_type]
